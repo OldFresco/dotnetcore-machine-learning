@@ -11,7 +11,7 @@ namespace MachineLearning.Math
 
         public static double CalcDeriv(double x)
         {
-            double s = Calc(x);
+            var s = Calc(x);
             return s * (1 - s);
         }
     }
