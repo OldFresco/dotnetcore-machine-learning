@@ -1,9 +1,9 @@
 {
-    "Name": "MachineLearning.Math.Tests",
+    "Name": "MLlib.Math.ActivationFunctions.Tests",
     "version": "1.0.0-*",
     "testRunner": "xunit",
     "dependencies": {
-        "MachineLearning.Math": {
+        "MLlib.Math.ActivationFunctions": {
             "version": "1.0.0",
             "target": "project"
         },
