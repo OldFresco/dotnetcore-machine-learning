@@ -6,7 +6,25 @@ namespace MLlib
     // To enable this option, right-click on the project and select the Properties menu item. In the Build tab select "Produce outputs on build".
     public class NeuralNet
     {
-        public NeuralNet()
+        private Matrix _trainingData;
+
+        public NeuralNet(Matrix trainingData)
+        {
+            _trainingData = trainingData;
+        }
+
+        public void Learn()
+        {
+
+        }
+
+        private void ForwardPropagate()
+        {
+        }
+        private void BackPropagate()
+        {
+        }
+        private void UpdateWeights()
         {
         }
 
