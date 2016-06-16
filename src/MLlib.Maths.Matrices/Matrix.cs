@@ -52,12 +52,11 @@ namespace MLlib.Maths.Matrices
         public void RandomInit()
         {
             var randomNumberGenerator = new Random();
-            var number = randomNumberGenerator.Next(-100,100)/100;
-
             for (var columnIndex = 0; columnIndex < ColumnLength + 1; columnIndex++)
             {
                 for (var rowIndex = 0; rowIndex < RowLength + 1; rowIndex++)
                 {
+                    var number = randomNumberGenerator.Next(-100, 100) / 100;
                     MatrixElementArray[rowIndex, columnIndex] = number;
                 }
             }
