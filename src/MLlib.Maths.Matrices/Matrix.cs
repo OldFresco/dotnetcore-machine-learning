@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MLlib.Maths.Matrices
+namespace MLlib
 {
     // This project can output the Class library as a NuGet Package.
     // To enable this option, right-click on the project and select the Properties menu item. In the Build tab select "Produce outputs on build".
@@ -62,21 +62,30 @@ namespace MLlib.Maths.Matrices
             }
         }
 
-        public void Transpose()
+        public Matrix GetTranspose()
         {
-            for (var columnIndex = 0; columnIndex < ColumnLength + 1; columnIndex++)
+            var transposedMatrix = new Matrix(ColumnLength, RowLength);
+
+            for (var columnIndex = 0; columnIndex < transposedMatrix.ColumnLength + 1; columnIndex++)
             {
-                for (var rowIndex = 0; rowIndex < RowLength + 1; rowIndex++)
+                for (var rowIndex = 0; rowIndex < transposedMatrix.RowLength + 1; rowIndex++)
                 {
-                    MatrixElementArray[rowIndex, columnIndex] = MatrixElementArray[ columnIndex, rowIndex];
+                    transposedMatrix.MatrixElementArray[rowIndex, columnIndex] = this.MatrixElementArray[columnIndex, rowIndex];
                 }
             }
+
+            return transposedMatrix;
         }
 
 
         public Matrix GetSubMatrix(int rowRange, int columnRange)
         {
             return new Matrix(rowRange,columnRange);
+        }
+
+        public void SetSubMatrix(int rowRange, int columnRange)
+        {
+
         }
 
         public double GetValueAt(int row, int column)
@@ -88,6 +97,7 @@ namespace MLlib.Maths.Matrices
         {
             MatrixElementArray[row, column] = value;
         }
+
 
         public int RowLength { get; }
         public int ColumnLength { get; }
